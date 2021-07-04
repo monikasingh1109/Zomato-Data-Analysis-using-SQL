@@ -149,3 +149,27 @@ order by maximum_Votes desc
 
 --Group restaurants basis on cost for two - Luxurious Expensive,Very Expensive,Expensive,High,Medium High,Average
 --Find number of restaurants for in each category
+
+select distinct(Average_Cost_for_two),
+case
+WHEN Average_Cost_for_two BETWEEN 150000 AND 800000 THEN 'Luxurious Expensive'
+WHEN Average_Cost_for_two BETWEEN 70000 AND 149999 THEN 'Very Expensive'
+WHEN Average_Cost_for_two BETWEEN 5000 AND 69999 THEN 'Expensive'
+WHEN Average_Cost_for_two BETWEEN 1200 AND 4999 THEN 'Medium High'
+WHEN Average_Cost_for_two BETWEEN 0 AND 1999 THEN 'Average'
+    ELSE 'Invalid'  
+	END
+	as T1
+from Zomato
+
+select Average_Cost_for_two,
+case
+WHEN Average_Cost_for_two BETWEEN 150000 AND 800000 THEN 'Luxurious Expensive'
+WHEN Average_Cost_for_two BETWEEN 70000 AND 149999 THEN 'Very Expensive'
+WHEN Average_Cost_for_two BETWEEN 5000 AND 69999 THEN 'Expensive'
+WHEN Average_Cost_for_two BETWEEN 1200 AND 4999 THEN 'Medium High'
+WHEN Average_Cost_for_two BETWEEN 0 AND 1999 THEN 'Average'
+    ELSE 'Invalid'  
+	END
+	as T1
+from Zomato
